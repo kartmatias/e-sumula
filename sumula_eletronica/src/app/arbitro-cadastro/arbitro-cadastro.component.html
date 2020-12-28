@@ -1,0 +1,113 @@
+<section class="campo_cadastro">
+    <form (ngSubmit) = "onSubmit(this.formulario)" [formGroup]="formulario">
+        <p class="texto_titulo_cadastro">
+            Cadastro de Árbitro
+        </p>    
+        
+        <div class="form-group">
+            <div class="form-group col-md-12">
+                <label for="nome" class="control-label">Nome</label>               
+            </div>
+    
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" formControlName="nome" id="nome" 
+                placeholder="Nome" required onkeypress="return event.charCode >= 65 || event.charCode == 32"> 
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('nome')">*Campo Inválido</label>
+            </div>
+          
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-12">
+                <label for="senha" class="control-label">Senha</label>
+            </div>
+    
+            <div class="form-group col-md-12">
+                <input type="password" password class="form-control" formControlName="senha" id="senha"
+                placeholder="Senha" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('senha')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label for="cpf" class="control-label">CPF</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" formControlName="cpf" id="cpf" placeholder="CPF" 
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57" required>   
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('cpf')">*Campo Inválido</label>            
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="dataNascimento" class="control-label">Data de Nascimento</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="date" date class="form-control" formControlName="dataNascimento" 
+                id="dataNascimento" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('dataNascimento')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label for="altura" class="control-label">Altura</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="number" number class="form-control" formControlName="altura" id="altura" 
+                placeholder="altura" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('altura')">*Campo Inválido</label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="peso" class="control-label">Peso</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="number" number class="form-control" formControlName="peso" 
+                placeholder="peso" id="peso" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('peso')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
+                <label for="sexo">Sexo</label>
+                <select id="sexo" class="form-control" id="sexo" formControlName="sexo">
+                    <option value="Masculino">Masculino</option>
+                    <option value="Feminino">Feminino</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
+                <label for="idCategoria">Categoria</label>
+                <select id="idCategoria" class="form-control" formControlName="idCategoria">
+                    <option *ngFor="let categoria of categorias" [value]="categoria.id">{{categoria.nome}}</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
+                <label for="funcao">Função</label>
+                <select id="funcao" class="form-control" id="funcao" formControlName="funcao">
+                    <option value="Arbitro">Árbitro</option>
+                    <option value="Assistente">Assistente</option>
+                </select>
+            </div>
+        </div>
+        
+        <p>
+            <button class="btn btn-success" [disabled]="!formulario.valid" type="submit">Salvar</button> 
+        </p>
+        <p>
+            <a class="btn btn-danger" routerLink="/arbitro">Cancelar</a>
+        </p>
+        
+    </form>           
+</section>

@@ -1,0 +1,14 @@
+body {
+	margin: 0;
+	padding: 0;
+	font-family: sans-serif;
+	background-color: #C0C0C0 !important;
+}
+
+button .texted-right-icon {
+	margin-right: 5px;
+}
+
+.pagination-control button {
+	margin-right: 5px;
+}

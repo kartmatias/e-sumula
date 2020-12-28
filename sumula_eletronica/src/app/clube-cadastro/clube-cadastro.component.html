@@ -1,0 +1,82 @@
+<section class="campo_cadastro">
+    <form (ngSubmit) = "onSubmit(this.formulario)" [formGroup] = "formulario">
+        <p class="texto_titulo_cadastro">
+            Cadastro de Clube
+        </p>    
+        
+        <div class="form-group">
+            <div class="form-group col-md-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+    
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" formControlName="nome" id="nome" placeholder="Nome" 
+                required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('nome')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label for="dataFundacao" class="control-label">Data de Fundacao</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="date" date class="form-control" formControlName="dataFundacao" 
+                id="dataFundacao" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('dataFundacao')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label for="estadio" class="control-label">Estádio</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" formControlName="estadio" id="estadio" 
+                placeholder="Estádio" required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('estadio')">*Campo Inválido</label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="cep" class="control-label">CEP</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" formControlName="cep" id="cep" 
+                placeholder="CEP" (blur)="verificaCep()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                required>
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('cep')">*Campo Inválido</label>
+                <label class="text-danger" *ngIf="cepEncontrado()">*CEP não encontrado</label>
+            </div>           
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">               
+                <label class="control-label">Logradouro: {{endereco.logradouro}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label class="control-label">Bairro: {{endereco.bairro}}</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label class="control-label">Cidade: {{endereco.localidade}}/{{endereco.uf}}</label>
+            </div>
+        </div>
+        
+        <p>
+            <button class="btn btn-success" [disabled]="!formulario.valid" type="submit">Salvar</button> 
+        </p>
+        <p>
+            <a class="btn btn-danger" routerLink="/clube">Cancelar</a>
+        </p>
+        
+    </form>           
+</section>
+    

@@ -1,0 +1,31 @@
+<section class="campo_tabela">
+    <p>
+        <a class="btn btn-success" routerLink="/sumula-cadastro">Nova Súmula</a>
+    </p>
+    <p class="texto_titulo_tabela">
+        Súmulas finalizadas:
+    </p>
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Data</th>
+                    <th scope="col">Mandante</th>
+                    <th scope="col">Visitante</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let sumula of sumulas">
+                    <td>
+                        <a routerLink="/sumula-visualizacao/{{sumula.id}}">
+                            {{mascaraDataHora(sumula.data)}}
+                        </a>
+                    </td>
+                    <td>{{sumula.clubeMandante.nome}}</td>
+                    <td>{{sumula.clubeVisitante.nome}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+

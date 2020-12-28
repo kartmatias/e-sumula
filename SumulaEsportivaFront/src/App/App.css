@@ -1,0 +1,15 @@
+.main-container {
+	background-color: #F5F5F5;
+	border-radius: 10px;
+	border-style: double;
+	margin-bottom: 100px;
+	padding-bottom: 8px;
+}
+
+.background-white {
+	background-color: #FFFFFF !important;
+}
+
+.centralized {
+	text-align: center;
+}

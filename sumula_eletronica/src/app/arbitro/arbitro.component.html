@@ -1,0 +1,32 @@
+<section class="campo_tabela">
+    <p>
+        <a class="btn btn-success" routerLink="/arbitro-cadastro">Novo Árbitro</a>
+    </p>
+    <p class="texto_titulo_tabela">
+        Árbitros cadastrados:
+    </p>
+
+    <div class="table-responsive">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Nome</th>
+                    <th scope="col">Função</th>
+                    <th scope="col">Categoria</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let arbitro of arbitros">
+                    <td>
+                        <a routerLink="/arbitro-cadastro/{{arbitro.id}}">
+                            {{arbitro.nome}}
+                        </a>
+                    </td>
+                    <td>{{arbitro.funcao}}</td>
+                    <td>{{arbitro.categoria}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+

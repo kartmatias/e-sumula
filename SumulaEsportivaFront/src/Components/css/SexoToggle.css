@@ -1,0 +1,37 @@
+.switch-sexo .react-toggle-thumb {
+	display: none;
+}
+
+.switch-sexo .react-toggle-track {
+	width: 86px;
+}
+
+.switch-sexo .react-toggle-track-check {
+	margin: 12px 0 0 0;
+}
+
+.switch-sexo .react-toggle-track-x {
+	left: 8px;
+	margin: 12px 0 0 0;
+}
+
+.switch-sexo-item {
+	font-weight: bolder;
+	color: white;
+}
+
+.switch-sexo.react-toggle--checked .react-toggle-track {
+	background-color: #3A3AFF;
+}
+
+.switch-sexo.react-toggle--checked:hover:not(.react-toggle--disabled) .react-toggle-track {
+	background-color: #0000FF !important;
+}
+
+.switch-sexo .react-toggle-track {
+	background-color: #FF3AFF;
+}
+
+.switch-sexo.react-toggle:hover:not(.react-toggle--disabled) .react-toggle-track {
+	background-color: #FF00FF;
+}

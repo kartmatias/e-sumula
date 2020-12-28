@@ -1,0 +1,68 @@
+<section class="campo_cadastro">
+    <form (ngSubmit) = "onSubmit(this.formulario)" [formGroup]="formulario">
+        <p class="texto_titulo_cadastro">
+            Cadastro de Atleta
+        </p>    
+        
+        <div class="form-group">
+            <div class="form-group col-md-12">
+                <label for="nome" class="control-label">Nome</label>
+            </div>
+    
+            <div class="form-group col-md-12">
+                <input type="text" class="form-control" required formControlName="nome" id="nome"
+                 placeholder="Nome" onkeypress="return event.charCode >= 65 || event.charCode == 32">                
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('nome')">*Campo Inválido</label>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="form-group col-md-6">
+                <label for="cpf" class="control-label">CPF</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="text" class="form-control" required formControlName="cpf" id="cpf" placeholder="CPF" 
+                onkeypress="return event.charCode >= 48 && event.charCode <= 57">
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('cpf')">*Campo Inválido</label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="dataNascimento" required class="control-label">Data de Nascimento</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="date" date class="form-control" required formControlName="dataNascimento" 
+                id="dataNascimento">
+                <label for="nome" class="text-danger" *ngIf="verificaCampo('dataNascimento')">*Campo Inválido</label>
+            </div>
+
+            <div class="form-group col-md-6">
+                <label for="bid" class="control-label">BID</label>
+            </div>
+    
+            <div class="form-group col-md-6">
+                <input type="number" number class="form-control" formControlName="bid" 
+                id="bid">
+            </div>
+        </div>
+
+        <div class="form-group col-md-6">
+            <div class="form-group col-md-6">
+                <label for="idClube">Clube</label>
+                <select id="idClube" class="form-control" id="idClube" formControlName="idClube">
+                    <option [value]=0>Sem Clube</option>
+                    <option *ngFor="let clube of clubes" [value]="clube.id">{{clube.nome}}</option>
+                </select>
+            </div>
+        </div>
+        
+        <p>
+            <button class="btn btn-success" [disabled]="!formulario.valid" type="submit">Salvar</button> 
+        </p>
+        <p>
+            <a class="btn btn-danger" routerLink="/atleta">Cancelar</a>
+        </p>
+        
+    </form>           
+</section>
