@@ -1,5 +1,5 @@
 # SumulaEsportivaServer
-###### UEM - Projeto de Sistemas de Software - 2017
+###### Sistemas de Software para Esportes - 2020
 
 #### Tecnologias utilizadas:
    - [Maven] - O Apache Maven é uma ferramenta de gerenciamento e compreensão de projetos de software. Com base no conceito de um modelo de objeto de projeto (POM), o Maven pode gerir a compilação, o relatório e a documentação de um projeto de uma informação central
